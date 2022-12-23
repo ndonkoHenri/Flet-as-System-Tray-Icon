@@ -17,5 +17,5 @@ pip install -r requirements.txt
 ```
 
 ### Capture
-<img src="_capture/sample-gif.gif">
+<img src="_sample/sample.mp4">
 
