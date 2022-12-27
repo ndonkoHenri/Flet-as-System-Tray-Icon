@@ -16,13 +16,6 @@ All these are in the `requirements.txt` file. For simplicity:
 pip install -r requirements.txt
 ```
 
-### Running the App
-After installing the dependencies, you can run the app by executing the `main.py` file:
-
-```bash
-python main.py
-```
-
 ### Capture
 <img src="_sample/sample.mp4">
 
