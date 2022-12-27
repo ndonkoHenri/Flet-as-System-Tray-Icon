@@ -17,5 +17,5 @@ pip install -r requirements.txt
 ```
 
 ### Capture
-<img src="_sample/sample.mp4">
+https://cdn.discordapp.com/attachments/1000264818604904499/1056002664401469450/tray.mp4
 
