@@ -24,5 +24,5 @@ python main.py
 ```
 
 ### Capture
-https://cdn.discordapp.com/attachments/1000264818604904499/1056002664401469450/tray.mp4
+![tray gif](https://user-images.githubusercontent.com/98978078/211149906-b44ee4a0-a668-4678-914c-20e6a346d63e.gif)
 
