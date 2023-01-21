@@ -3,13 +3,13 @@ A simple program using pystray to expose the possibility of a Flet app being red
 This program has been tested only on Windows. I hope it works on your device too. Let me know if not.
 """
 
-
 import pystray  # pip install pystray | https://pystray.readthedocs.io
 import flet as ft
-from PIL import Image   # pip install pillow
+from PIL import Image  # pip install pillow
 
 # the image to be displayed in the tray
 tray_image = Image.open("tray_img.png")
+p: ft.Page
 
 
 def exit_app(icon, query):
@@ -22,7 +22,7 @@ def exit_app(icon, query):
     """
     button_clicked(None)
     icon.stop()  # stop the tray icon loop/display
-    p.window_close()  # close our window
+    p.window_destroy()  # close our window
     print("The App was closed/exited successfully!")
 
 
@@ -143,11 +143,11 @@ def on_window_event(e):
         # if the window is maximized/restored, we make the icon not visible, and add our app back to the taskbar/dock.
         tray_icon.visible = False
         p.window_skip_task_bar = False
+    elif e.data == "close":
+        tray_icon.stop()
+        e.page.window_destroy()
 
     p.update()
-
-
-p: ft.Page
 
 
 def main(page):
@@ -156,6 +156,8 @@ def main(page):
     p = page
 
     page.on_window_event = on_window_event
+    page.window_prevent_close = True
+    page.title = "Flet in the sys-tray"
 
     page.add(
         ft.Text("- Minimize this app to see in the tray. \n"
@@ -175,4 +177,4 @@ tray_icon.run_detached(setup=my_setup)
 threading.Thread(target=icon.run, args=([my_setup])).start()
 """
 
-ft.app(target=main)     # cannot obviously run in web browser!!
+ft.app(target=main)  # cannot obviously run in web browser!!
